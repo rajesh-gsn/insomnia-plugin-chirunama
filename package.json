@@ -1,0 +1,10 @@
+{
+  "name": "insomnia-plugin-chirunama",
+  "version": "0.0.1",
+  "private": true,
+  "insomnia": {
+    "name": "chirunama",
+    "description": "Manually preview PNG/PDF responses and render one or more ZPL labels with Labelary."
+  },
+  "main": "main.js"
+}
