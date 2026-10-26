@@ -1,10 +1,36 @@
 {
   "name": "insomnia-plugin-chirunama",
-  "version": "0.0.1",
-  "private": true,
+  "version": "0.1.0",
+  "description": "Preview PNG, PDF, and ZPL label responses in Insomnia, including multiple labels rendered with Labelary.",
+  "main": "main.js",
+  "files": [
+    "main.js"
+  ],
+  "keywords": [
+    "insomnia",
+    "insomnia-plugin",
+    "zpl",
+    "label",
+    "labelary"
+  ],
+  "author": "Rajesh GSN",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajesh-gsn/insomnia-plugin-chirunama.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rajesh-gsn/insomnia-plugin-chirunama/issues"
+  },
+  "homepage": "https://github.com/rajesh-gsn/insomnia-plugin-chirunama#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "prepublishOnly": "node scripts/prepare-publish.js"
+  },
   "insomnia": {
     "name": "chirunama",
     "description": "Manually preview PNG/PDF responses and render one or more ZPL labels with Labelary."
-  },
-  "main": "main.js"
+  }
 }

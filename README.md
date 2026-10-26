@@ -25,7 +25,23 @@ This repository is the source. Insomnia loads it through a symlink:
 
 After a code change, reload plugins in Insomnia or restart the app, then send the request again before opening the preview. Theme changes are read when **Preview Label** is opened, so a theme switch does not require sending the request again.
 
-npm publishing is not set up yet. `package.json` stays `"private": true` until that release.
+## Publish to npm
+
+Insomnia installs the plugin from the npm package `insomnia-plugin-chirunama`. Publishing happens from a GitHub release. `npm publish` runs `scripts/prepare-publish.js` first and refuses a private package, a bad name, or a missing `main.js`.
+
+1. Create an npm access token with permission to publish this package.
+2. In the GitHub repository, add that token as the Actions secret `NPM_TOKEN`.
+3. Bump `version` in `package.json` to the release you want. npm will not replace a version that already exists.
+4. Commit that version, push `main`, then publish a GitHub release whose tag matches it, for example `v0.1.0`.
+
+The workflow `.github/workflows/publish.yml` publishes that commit to the public npm registry. After it succeeds, install it in Insomnia from **Settings → Plugins** with the name `insomnia-plugin-chirunama`.
+
+To publish from this machine instead of GitHub Actions:
+
+```bash
+npm login
+npm publish
+```
 
 ## Architecture
 
@@ -109,7 +125,9 @@ Built-in theme names live in `BUILTIN_THEMES` in `main.js`. A custom theme that 
 ## Project layout
 
 ```text
-package.json   plugin name, Insomnia display name, and entry point
-main.js        detection, storage, theme lookup, and preview page
-README.md      this document
+package.json                         plugin name, version, and npm publish settings
+main.js                              detection, storage, theme lookup, and preview page
+scripts/prepare-publish.js           checks the package before npm publish
+.github/workflows/publish.yml        publishes to npm when a GitHub release is published
+README.md                            this document
 ```
