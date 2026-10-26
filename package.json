@@ -4,7 +4,8 @@
   "description": "Preview PNG, PDF, and ZPL label responses in Insomnia, including multiple labels rendered with Labelary.",
   "main": "main.js",
   "files": [
-    "main.js"
+    "main.js",
+    "assets/chirunama-logo.jpg"
   ],
   "keywords": [
     "insomnia",

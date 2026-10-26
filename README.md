@@ -1,5 +1,9 @@
 # chirunama
 
+<p align="center">
+  <img src="assets/chirunama-logo.jpg" alt="chirunama logo" width="160">
+</p>
+
 Insomnia plugin that previews PNG, PDF, and ZPL label responses. Multiple labels in one response can be stepped through with the arrow buttons or the left and right arrow keys. ZPL is rendered by [Labelary](https://labelary.com).
 
 The package name is `insomnia-plugin-chirunama`. Insomnia shows it as **chirunama**, and the request action is **Preview Label**.
